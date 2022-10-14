@@ -1,5 +1,3 @@
-// 1.0.1
-
 const removeQueryParams = () => {
   // Get URL & URL Path
   const url = new URL(window.location.href);
