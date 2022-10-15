@@ -1,0 +1,2 @@
+// Remove Query Params
+removeQueryParams();
