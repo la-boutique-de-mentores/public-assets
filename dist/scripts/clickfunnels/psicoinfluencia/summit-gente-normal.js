@@ -31,16 +31,16 @@ const refCodeMappingTable = {
 const refCodeParam          = "ref_code_summit_gn";
 const queryParams           = new URLSearchParams(window.location.search);
 const refCodeValue          = queryParams.get(refCodeParam) ?? localStorage.getItem(refCodeParam.split("_").join("-"));
-const refCodeValueValid     = validateRefCode(refCodeMappingTable, refCodeValue);
+const refCodeValueValid     = window.validateRefCode(refCodeMappingTable, refCodeValue);
 
 // Store Ref Code
-storeRefCode(refCodeValueValid, refCodeParam.split("_").join("-"), refCodeValue);
+window.storeRefCode(refCodeValueValid, refCodeParam.split("_").join("-"), refCodeValue);
 
 // Load Video from Ref Code
-loadVideoFromRefCode(refCodeValueValid, refCodeMappingTable, refCodeValue);
+window.loadVideoFromRefCode(refCodeValueValid, refCodeMappingTable, refCodeValue);
 
 // Load Image from Ref Code
-loadImageFromRefCode(refCodeValueValid, refCodeMappingTable, refCodeValue);
+window.loadImageFromRefCode(refCodeValueValid, refCodeMappingTable, refCodeValue);
 
 // Remove Query Params
-removeQueryParams();
+window.removeQueryParams();

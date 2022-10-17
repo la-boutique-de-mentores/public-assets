@@ -33,7 +33,7 @@ const refCodeParam            = "ref_code_summit_gn";
 const queryParams             = new URLSearchParams(window.location.search);
 const couponCodeValue         = queryParams.get(couponCodeParam);
 const refCodeValue            = queryParams.get(refCodeParam) ?? localStorage.getItem(refCodeParam.split("_").join("-"));
-const refCodeValueValid       = validateRefCode(refCodeMappingTable, refCodeValue);
+const refCodeValueValid       = window.validateRefCode(refCodeMappingTable, refCodeValue);
 const payProcessorParam       = "pay_processor";
 const payFromSpainParam       = "pay_from_spain";
 const payTaxExemptionParam    = "pay_tax_exemption";
@@ -56,20 +56,20 @@ const thrivecartObj           = {
 }
 
 // Store Ref Code
-storeRefCode(refCodeValueValid, refCodeParam.split("_").join("-"), refCodeValue);
+window.storeRefCode(refCodeValueValid, refCodeParam.split("_").join("-"), refCodeValue);
 
 // Load Image from Ref Code
-loadImageFromRefCode(refCodeValueValid, refCodeMappingTable, refCodeValue);
+window.loadImageFromRefCode(refCodeValueValid, refCodeMappingTable, refCodeValue);
 
 // Add Thrivecart Params
 if (couponCodeValue !== null) thrivecartObj.queryParams["coupon"] = couponCodeValue;
 thrivecartObj.queryParams["passthrough[custom_ref-code]"] = (refCodeValueValid) ? refCodeValue : "organic";
 
 // Remove Query Params
-removeQueryParams();
+window.removeQueryParams();
 
 // Add Event Listeners
-payProcessorSelector.addEventListener("change", () => toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
-payTaxExemptionSelector.addEventListener("change", () => toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
-payFromSpainSelector.addEventListener("change", () => toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
-window.addEventListener("load", () => toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
+payProcessorSelector.addEventListener("change", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
+payTaxExemptionSelector.addEventListener("change", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
+payFromSpainSelector.addEventListener("change", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
+window.addEventListener("load", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
