@@ -25,7 +25,7 @@ var loadVideoFromRefCode = function loadVideoFromRefCode(refCodeValid, refCodeMa
   videoRefCodeSelector.src = videoUrl;
 };
 var validatePayParams = function validatePayParams(payProcessorValue, payFromSpainValue, payTaxExemptionValue) {
-  payParamValues = [payProcessorValue, payFromSpainValue];
+  var payParamValues = [payProcessorValue, payFromSpainValue];
   if (payFromSpainValue == "yes") payParamValues.push(payTaxExemptionValue);
   return payParamValues.every(function (item) {
     return typeof item === "string";

@@ -30,7 +30,7 @@ const loadVideoFromRefCode = (refCodeValid, refCodeMappingTable, refCodeValue) =
 };
 
 const validatePayParams = (payProcessorValue, payFromSpainValue, payTaxExemptionValue) => {
-  payParamValues = [
+  const payParamValues = [
     payProcessorValue,
     payFromSpainValue
   ]
