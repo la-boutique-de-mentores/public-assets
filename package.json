@@ -13,7 +13,8 @@
     "url": "https://github.com/la-boutique-de-mentores/public-assets.git"
   },
   "scripts": {
-    "build-scripts": "rm -rf dist/scripts/* && babel src/scripts -d dist/scripts"
+    "build-scripts": "rm -rf dist/scripts/* && babel src/scripts -d dist/scripts",
+    "deploy": "git subtree push --prefix dist github gh-pages"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
