@@ -49,10 +49,10 @@ const refCodeMappingTable = {
 const refCodeParam          = "ref_code_la_experiencia";
 const queryParams           = new URLSearchParams(window.location.search);
 const refCodeValue          = queryParams.get(refCodeParam) ?? localStorage.getItem(refCodeParam.split("_").join("-"));
-const refCodeValueValid     = validateRefCode(refCodeMappingTable, refCodeValue);
+const refCodeValueValid     = window.validateRefCode(refCodeMappingTable, refCodeValue);
 
 // Store Ref Code
-storeRefCode(refCodeValueValid, refCodeParam.split("_").join("-"), refCodeValue);
+window.storeRefCode(refCodeValueValid, refCodeParam.split("_").join("-"), refCodeValue);
 
 // Remove Query Params
-removeQueryParams();
+window.removeQueryParams();

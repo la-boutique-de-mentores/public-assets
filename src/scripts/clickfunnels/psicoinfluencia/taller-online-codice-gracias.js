@@ -1,2 +1,2 @@
 // Remove Query Params
-removeQueryParams();
+window.removeQueryParams();
