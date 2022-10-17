@@ -1,5 +1,8 @@
+"use strict";
+
+var _queryParams$get;
 // Settings
-const refCodeMappingTable = {
+var refCodeMappingTable = {
   "helder-torres": {},
   "vikrampal-singh": {},
   "prem-sukhdev": {},
@@ -45,11 +48,10 @@ const refCodeMappingTable = {
   "montse-valverde": {},
   "ilaria-gonzales": {}
 };
-
-const refCodeParam          = "ref_code_la_experiencia";
-const queryParams           = new URLSearchParams(window.location.search);
-const refCodeValue          = queryParams.get(refCodeParam) ?? localStorage.getItem(refCodeParam.split("_").join("-"));
-const refCodeValueValid     = window.validateRefCode(refCodeMappingTable, refCodeValue);
+var refCodeParam = "ref_code_la_experiencia";
+var queryParams = new URLSearchParams(window.location.search);
+var refCodeValue = (_queryParams$get = queryParams.get(refCodeParam)) !== null && _queryParams$get !== void 0 ? _queryParams$get : localStorage.getItem(refCodeParam.split("_").join("-"));
+var refCodeValueValid = window.validateRefCode(refCodeMappingTable, refCodeValue);
 
 // Store Ref Code
 window.storeRefCode(refCodeValueValid, refCodeParam.split("_").join("-"), refCodeValue);
