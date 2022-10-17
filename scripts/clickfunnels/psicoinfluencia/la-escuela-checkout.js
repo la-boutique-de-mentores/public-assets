@@ -1,27 +1,43 @@
+"use strict";
+
 // Settings
-const couponCodeParam         = "off";
-const queryParams             = new URLSearchParams(window.location.search);
-const couponCodeValue         = queryParams.get(couponCodeParam);
-const payProcessorParam       = "pay_processor";
-const payFromSpainParam       = "pay_from_spain";
-const payTaxExemptionParam    = "pay_tax_exemption";
-const payProcessorSelector    = document.querySelector(`[data-custom-type="${payProcessorParam}"]`);
-const payFromSpainSelector    = document.querySelector(`[data-custom-type="${payFromSpainParam}"]`);
-const payTaxExemptionSelector = document.querySelector(`[data-custom-type="${payTaxExemptionParam}"]`);
-const thrivecartObj           = {
+var couponCodeParam = "off";
+var queryParams = new URLSearchParams(window.location.search);
+var couponCodeValue = queryParams.get(couponCodeParam);
+var payProcessorParam = "pay_processor";
+var payFromSpainParam = "pay_from_spain";
+var payTaxExemptionParam = "pay_tax_exemption";
+var payProcessorSelector = document.querySelector("[data-custom-type=\"".concat(payProcessorParam, "\"]"));
+var payFromSpainSelector = document.querySelector("[data-custom-type=\"".concat(payFromSpainParam, "\"]"));
+var payTaxExemptionSelector = document.querySelector("[data-custom-type=\"".concat(payTaxExemptionParam, "\"]"));
+var thrivecartObj = {
   account: "laboutiquedementores",
-  queryParams: { "coupon_cache": false },
+  queryParams: {
+    "coupon_cache": false
+  },
   checkouts: {
     stripe: {
-      t: {id: 2, slug: "tc-laboutiquedementores-2-7Q76DK"},
-      n: {id: 4, slug: "tc-laboutiquedementores-4-0O3AX7"}
+      t: {
+        id: 2,
+        slug: "tc-laboutiquedementores-2-7Q76DK"
+      },
+      n: {
+        id: 4,
+        slug: "tc-laboutiquedementores-4-0O3AX7"
+      }
     },
     paypal: {
-      t: {id: 14, slug: "tc-laboutiquedementores-14-7IJ2DQ"},
-      n: {id: 15, slug: "tc-laboutiquedementores-15-Z82ZYQ"}
+      t: {
+        id: 14,
+        slug: "tc-laboutiquedementores-14-7IJ2DQ"
+      },
+      n: {
+        id: 15,
+        slug: "tc-laboutiquedementores-15-Z82ZYQ"
+      }
     }
   }
-}
+};
 
 // Add Thrivecart Params
 if (couponCodeValue !== null) thrivecartObj.queryParams["coupon"] = couponCodeValue;
@@ -30,7 +46,15 @@ if (couponCodeValue !== null) thrivecartObj.queryParams["coupon"] = couponCodeVa
 window.removeQueryParams();
 
 // Add Event Listeners
-payProcessorSelector.addEventListener("change", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
-payTaxExemptionSelector.addEventListener("change", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
-payFromSpainSelector.addEventListener("change", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
-window.addEventListener("load", () => window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam));
+payProcessorSelector.addEventListener("change", function () {
+  return window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam);
+});
+payTaxExemptionSelector.addEventListener("change", function () {
+  return window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam);
+});
+payFromSpainSelector.addEventListener("change", function () {
+  return window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam);
+});
+window.addEventListener("load", function () {
+  return window.toggleThrivecartCheckout(thrivecartObj, payProcessorParam, payFromSpainParam, payTaxExemptionParam);
+});
