@@ -65,7 +65,7 @@ const refCodeMappingTable = {
     "image": "https://images.clickfunnels.com/d2/0b18efb2754f508a6a91a768b13e4a/montse-valverde.jpg"
   },
   "maria-blanco": {
-    "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
+    "video": "https://player.vimeo.com/video/761780040?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
     "image": "https://images.clickfunnels.com/fe/c9918755074e2b8857a2abbf911c87/maria-blanco.jpg"
   },
   "henals-senior": {
@@ -73,7 +73,7 @@ const refCodeMappingTable = {
     "image": "https://images.clickfunnels.com/ec/4a0f7ebbd14be3b564cb36476de413/henals-senior.jpg"
   },
   "maria-celeste": {
-    "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
+    "video": "https://player.vimeo.com/video/761780062?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
     "image": "https://images.clickfunnels.com/71/1ed6ae0b0545599f72a888a6b84d75/maria-celeste.jpg"
   },
   "carlos-avila": {
