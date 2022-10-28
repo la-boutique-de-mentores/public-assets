@@ -35,7 +35,7 @@ const validatePayParams = (payProcessorValue, payFromSpainValue, payTaxExemption
     payFromSpainValue
   ]
 
-  if (payFromSpainValue == "yes") payParamValues.push(payTaxExemptionValue);
+  // if (payFromSpainValue == "yes") payParamValues.push(payTaxExemptionValue);
 
   return payParamValues.every(item => typeof item === "string");
 };
@@ -54,13 +54,13 @@ const toggleThrivecartCheckout = (thrivecartObj, payProcessorParam, payFromSpain
   if (payFromSpainValue == "yes") {
 
     thrivecartObj.queryParams["passthrough[customer_address_country]"] = "ES";
-    togglePayTaxExemptionRow(payTaxExemptionParam, true);
+    // togglePayTaxExemptionRow(payTaxExemptionParam, true);
   } else {
 
     localStorage.removeItem(payTaxExemptionParam);
     delete thrivecartObj.queryParams["passthrough[customer_address_country]"];
 
-    togglePayTaxExemptionRow(payTaxExemptionParam, false);
+    // togglePayTaxExemptionRow(payTaxExemptionParam, false);
   }
 
   const payTaxExemptionValue = localStorage.getItem(payTaxExemptionParam);

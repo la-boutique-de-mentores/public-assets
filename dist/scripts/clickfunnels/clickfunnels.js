@@ -26,7 +26,9 @@ var loadVideoFromRefCode = function loadVideoFromRefCode(refCodeValid, refCodeMa
 };
 var validatePayParams = function validatePayParams(payProcessorValue, payFromSpainValue, payTaxExemptionValue) {
   var payParamValues = [payProcessorValue, payFromSpainValue];
-  if (payFromSpainValue == "yes") payParamValues.push(payTaxExemptionValue);
+
+  // if (payFromSpainValue == "yes") payParamValues.push(payTaxExemptionValue);
+
   return payParamValues.every(function (item) {
     return typeof item === "string";
   });
@@ -41,12 +43,14 @@ var toggleThrivecartCheckout = function toggleThrivecartCheckout(thrivecartObj, 
   var payFromSpainValue = localStorage.getItem(payFromSpainParam);
   if (payFromSpainValue == "yes") {
     thrivecartObj.queryParams["passthrough[customer_address_country]"] = "ES";
-    togglePayTaxExemptionRow(payTaxExemptionParam, true);
+    // togglePayTaxExemptionRow(payTaxExemptionParam, true);
   } else {
     localStorage.removeItem(payTaxExemptionParam);
     delete thrivecartObj.queryParams["passthrough[customer_address_country]"];
-    togglePayTaxExemptionRow(payTaxExemptionParam, false);
+
+    // togglePayTaxExemptionRow(payTaxExemptionParam, false);
   }
+
   var payTaxExemptionValue = localStorage.getItem(payTaxExemptionParam);
   addThrivecartQueryParams(thrivecartObj);
   unmountThrivecartCheckout(thrivecartObj);
