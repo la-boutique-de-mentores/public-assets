@@ -27,10 +27,6 @@ var refCodeMappingTable = {
     "video": "https://player.vimeo.com/video/759868067?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
     "image": "https://images.clickfunnels.com/71/0a9892adc7495792fde120db21ed9a/jose-sevilla.jpg"
   },
-  "silvia-marin": {
-    "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
-    "image": "https://images.clickfunnels.com/5a/0433aa64404294a2de774e3c6d8f28/silvia-marin.jpg"
-  },
   "nati-alcazar": {
     "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
     "image": "https://images.clickfunnels.com/cf/dc87011b3d4d4894c8c861856537b1/nati-alcazar.jpg"
