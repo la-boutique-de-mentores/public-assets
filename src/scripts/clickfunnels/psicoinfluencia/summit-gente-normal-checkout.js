@@ -110,7 +110,7 @@ const refCodeValue            = queryParams.get(refCodeParam) ?? localStorage.ge
 const refCodeValueValid       = window.validateRefCode(refCodeMappingTable, refCodeValue);
 const payProcessorParam       = "pay_processor";
 const payFromSpainParam       = "pay_from_spain";
-const payTaxExemptionParam    = "pay_tax_exemption";
+const payTaxExemptionParam    = "pay_spain_region";
 const payProcessorSelector    = document.querySelector(`[data-custom-type="${payProcessorParam}"]`);
 const payFromSpainSelector    = document.querySelector(`[data-custom-type="${payFromSpainParam}"]`);
 const payTaxExemptionSelector = document.querySelector(`[data-custom-type="${payTaxExemptionParam}"]`);
