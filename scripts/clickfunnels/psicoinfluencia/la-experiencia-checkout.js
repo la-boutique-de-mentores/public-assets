@@ -56,7 +56,7 @@ var refCodeValue = (_queryParams$get = queryParams.get(refCodeParam)) !== null &
 var refCodeValueValid = window.validateRefCode(refCodeMappingTable, refCodeValue);
 var payProcessorParam = "pay_processor";
 var payFromSpainParam = "pay_from_spain";
-var payTaxExemptionParam = "pay_tax_exemption";
+var payTaxExemptionParam = "pay_spain_region";
 var payProcessorSelector = document.querySelector("[data-custom-type=\"".concat(payProcessorParam, "\"]"));
 var payFromSpainSelector = document.querySelector("[data-custom-type=\"".concat(payFromSpainParam, "\"]"));
 var payTaxExemptionSelector = document.querySelector("[data-custom-type=\"".concat(payTaxExemptionParam, "\"]"));
