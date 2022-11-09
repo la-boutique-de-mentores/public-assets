@@ -79,19 +79,19 @@ const addThrivecartQueryParams = (thrivecartObj) => {
 };
 
 const mountThrivecartCheckout = (thrivecartObj, payProcessorValue, payFromSpainValue, payTaxExemptionValue) => {
-
-  let checkoutTax = payFromSpainValue == "yes" ? true : false;
-  if (checkoutTax) checkoutTax = payTaxExemptionValue == "no" ? true : false;
-  checkoutTax = checkoutTax ? "t" : "n";
+  let checkoutTax = true;
 
   switch (payTaxExemptionValue) {
     case "canary_islands":
+      checkoutTax = false;
       thrivecartObj.queryParams["passthrough[customer_address_state]"] = "Islas Canarias";
       break;
     case "ceuta":
+      checkoutTax = false;
       thrivecartObj.queryParams["passthrough[customer_address_state]"] = "Ceuta";
       break;
     case "melilla":
+      checkoutTax = false;
       thrivecartObj.queryParams["passthrough[customer_address_state]"] = "Melilla";
       break;
     default:
@@ -99,6 +99,7 @@ const mountThrivecartCheckout = (thrivecartObj, payProcessorValue, payFromSpainV
       break;
   }
 
+  checkoutTax = checkoutTax ? "t" : "n";
   const thrivecartCheckout = thrivecartObj.checkouts[payProcessorValue][checkoutTax];
   const thrivecartDiv = $(`div[data-thrivecart-account="${thrivecartObj.account}"]`);
 
