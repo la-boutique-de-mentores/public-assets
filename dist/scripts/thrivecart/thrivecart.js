@@ -4,12 +4,14 @@ var thrivecartQueryParams = new URLSearchParams(window.location.search);
 var thrivecartCustomerAddressCountry = thrivecartQueryParams.get("passthrough[customer_address_country]");
 var thrivecartCustomerAddressState = thrivecartQueryParams.get("passthrough[customer_address_state]");
 setTimeout(function () {
+  var thrivecartCustomerAddressCountrySelector = document.querySelector("#field-customer-address-country");
+  var thrivecartCustomerAddressStateSelector = document.querySelector("#field-customer-address-state");
   if (thrivecartCustomerAddressCountry != null) {
-    var thrivecartCustomerAddressCountrySelector = document.querySelector("#field-customer-address-country");
     thrivecartCustomerAddressCountrySelector.disabled = true;
+  } else {
+    thrivecartCustomerAddressCountrySelector.removeChild(document.querySelector("option[value='ES']"));
   }
   if (thrivecartCustomerAddressState != null) {
-    var thrivecartCustomerAddressStateSelector = document.querySelector("#field-customer-address-state");
     thrivecartCustomerAddressStateSelector.value = thrivecartCustomerAddressState;
     thrivecartCustomerAddressStateSelector.disabled = true;
   }

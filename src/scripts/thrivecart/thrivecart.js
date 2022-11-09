@@ -3,13 +3,16 @@ const thrivecartCustomerAddressCountry = thrivecartQueryParams.get("passthrough[
 const thrivecartCustomerAddressState   = thrivecartQueryParams.get("passthrough[customer_address_state]");
 
 setTimeout(() => {
+  const thrivecartCustomerAddressCountrySelector = document.querySelector("#field-customer-address-country");
+  const thrivecartCustomerAddressStateSelector   = document.querySelector("#field-customer-address-state");
+
   if (thrivecartCustomerAddressCountry != null) {
-    const thrivecartCustomerAddressCountrySelector = document.querySelector("#field-customer-address-country");
     thrivecartCustomerAddressCountrySelector.disabled = true;
+  } else {
+    thrivecartCustomerAddressCountrySelector.removeChild(document.querySelector("option[value='ES']"));
   }
 
   if (thrivecartCustomerAddressState != null) {
-    const thrivecartCustomerAddressStateSelector = document.querySelector("#field-customer-address-state");
     thrivecartCustomerAddressStateSelector.value = thrivecartCustomerAddressState;
     thrivecartCustomerAddressStateSelector.disabled = true;
   }
