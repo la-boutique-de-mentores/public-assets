@@ -8,6 +8,7 @@ setTimeout(() => {
 
   if (thrivecartCustomerAddressCountry != null) {
     thrivecartCustomerAddressCountrySelector.disabled = true;
+    thrivecartCustomerAddressCountrySelector.parentElement.style.display = "none";
   } else {
     thrivecartCustomerAddressCountrySelector.removeChild(document.querySelector("option[value='ES']"));
   }
