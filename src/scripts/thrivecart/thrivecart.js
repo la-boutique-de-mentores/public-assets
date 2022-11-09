@@ -4,12 +4,12 @@ const thrivecartCustomerAddressState   = thrivecartQueryParams.get("passthrough[
 
 setTimeout(() => {
   if (thrivecartCustomerAddressCountry != null) {
-    thrivecartCustomerAddressCountrySelector = document.querySelector("#field-customer-address-country");
+    const thrivecartCustomerAddressCountrySelector = document.querySelector("#field-customer-address-country");
     thrivecartCustomerAddressCountrySelector.disabled = true;
   }
 
   if (thrivecartCustomerAddressState != null) {
-    thrivecartCustomerAddressStateSelector = document.querySelector("#field-customer-address-state");
+    const thrivecartCustomerAddressStateSelector = document.querySelector("#field-customer-address-state");
     thrivecartCustomerAddressStateSelector.value = thrivecartCustomerAddressState;
     thrivecartCustomerAddressStateSelector.disabled = true;
   }
