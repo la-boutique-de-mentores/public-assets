@@ -59,23 +59,25 @@ var addThrivecartQueryParams = function addThrivecartQueryParams(thrivecartObj) 
   thrivecartDiv.attr("data-thrivecart-querystring", thriveCartQueryParamsObj);
 };
 var mountThrivecartCheckout = function mountThrivecartCheckout(thrivecartObj, payProcessorValue, payFromSpainValue, payTaxExemptionValue) {
-  var checkoutTax = payFromSpainValue == "yes" ? true : false;
-  if (checkoutTax) checkoutTax = payTaxExemptionValue == "no" ? true : false;
-  checkoutTax = checkoutTax ? "t" : "n";
+  var checkoutTax = true;
   switch (payTaxExemptionValue) {
     case "canary_islands":
+      checkoutTax = false;
       thrivecartObj.queryParams["passthrough[customer_address_state]"] = "Islas Canarias";
       break;
     case "ceuta":
+      checkoutTax = false;
       thrivecartObj.queryParams["passthrough[customer_address_state]"] = "Ceuta";
       break;
     case "melilla":
+      checkoutTax = false;
       thrivecartObj.queryParams["passthrough[customer_address_state]"] = "Melilla";
       break;
     default:
       delete thrivecartObj.queryParams["passthrough[customer_address_state]"];
       break;
   }
+  checkoutTax = checkoutTax ? "t" : "n";
   var thrivecartCheckout = thrivecartObj.checkouts[payProcessorValue][checkoutTax];
   var thrivecartDiv = $("div[data-thrivecart-account=\"".concat(thrivecartObj.account, "\"]"));
   console.log("Montando Checkout...");
