@@ -106,6 +106,22 @@ const refCodeMappingTable = {
   "sandra-logan": {
     "video": "https://player.vimeo.com/video/760580037?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
     "image": "https://images.clickfunnels.com/ef/3edfc2b3bb42989759b61d101556eb/sandra-logan.jpg"
+  },
+  "ade-ramirez": {
+    "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
+    "image": "https://images.clickfunnels.com/f5/93a2a2c8c84d9d9f2b8098c846a1cb/pixel.jpg"
+  },
+  "cathaysa-melian": {
+    "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
+    "image": "https://images.clickfunnels.com/f5/93a2a2c8c84d9d9f2b8098c846a1cb/pixel.jpg"
+  },
+  "salud-minimalista": {
+    "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
+    "image": "https://images.clickfunnels.com/f5/93a2a2c8c84d9d9f2b8098c846a1cb/pixel.jpg"
+  },
+  "vikreative": {
+    "video": "https://player.vimeo.com/video/759616934?autoplay=0&title=0&byline=0&wmode=transparent&autopause=0",
+    "image": "https://images.clickfunnels.com/f5/93a2a2c8c84d9d9f2b8098c846a1cb/pixel.jpg"
   }
 };
 
