@@ -99,6 +99,11 @@ var unmountThrivecartCheckout = function unmountThrivecartCheckout(thrivecartObj
   var thrivecartDiv = $("div[data-thrivecart-account=\"".concat(thrivecartObj.account, "\"]"));
   thrivecartDiv.children().remove();
 };
+var mountMauticForm = function mountMauticForm(mauticFormObj, mauticFormUrl, mauticQueryParams) {
+  console.log("Montando Formulario...");
+  var mauticQueryParamsObj = new URLSearchParams(mauticQueryParams).toString();
+  mauticFormObj.src = "".concat(mauticFormUrl, "?").concat(mauticQueryParamsObj);
+};
 
 // Exports
 window.removeQueryParams = removeQueryParams;
@@ -112,3 +117,4 @@ window.toggleThrivecartCheckout = toggleThrivecartCheckout;
 window.addThrivecartQueryParams = addThrivecartQueryParams;
 window.mountThrivecartCheckout = mountThrivecartCheckout;
 window.unmountThrivecartCheckout = unmountThrivecartCheckout;
+window.mountMauticForm = mountMauticForm;
