@@ -126,6 +126,13 @@ const unmountThrivecartCheckout = (thrivecartObj) => {
   thrivecartDiv.children().remove();
 };
 
+const mountMauticForm = (mauticFormObj, mauticFormUrl, mauticQueryParams) => {
+  console.log("Montando Formulario...");
+  const mauticQueryParamsObj = new URLSearchParams(mauticQueryParams).toString();
+  
+  mauticFormObj.src = `${mauticFormUrl}?${mauticQueryParamsObj}`;
+};
+
 // Exports
 window.removeQueryParams         = removeQueryParams;
 window.validateRefCode           = validateRefCode;
@@ -138,3 +145,4 @@ window.toggleThrivecartCheckout  = toggleThrivecartCheckout;
 window.addThrivecartQueryParams  = addThrivecartQueryParams;
 window.mountThrivecartCheckout   = mountThrivecartCheckout;
 window.unmountThrivecartCheckout = unmountThrivecartCheckout;
+window.mountMauticForm           = mountMauticForm;
